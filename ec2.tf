@@ -49,10 +49,10 @@ resource "aws_security_group" "my_security_group" {
 
 resource "aws_instance" "my_instance" {
   for_each = tomap({
-     = "ami-0df368112825f8d8f", # ubuntu
-    TWS-Junoon-1 = "ami-0df368112825f8d8f", #ubuntu
-    TWS-Junoon-2 = "ami-09de149defa704528", #RedHat
-    TWS-Junoon-3 = "ami-08f9a9c699d2ab3f9" # CentOs / Amazon Linux 2
+    dev1 = "ami-0df368112825f8d8f", # ubuntu
+    dev2 = "ami-0df368112825f8d8f", #ubuntu
+    dev3 = "ami-09de149defa704528", #RedHat
+    dev4 = "ami-08f9a9c699d2ab3f9" # CentOs / Amazon Linux 2
   }) # meta argument
 
   depends_on = [ aws_security_group.my_security_group, aws_key_pair.my_key_new ]
